@@ -37,7 +37,7 @@ function ReadYourReview({ booking }) {
 
   const myReviewAndRating = async (sitter_id, booking_id) => {
     const result = await axios.get(
-      `http://localhost:4000/comments/myPost?sitter_id=${sitter_id}&booking_id=${booking_id}`
+      `https://petsitter-server2.onrender.com/comments/myPost?sitter_id=${sitter_id}&booking_id=${booking_id}`
     );
     console.log(result);
     setMyReview(result.data.data);
@@ -57,9 +57,14 @@ function ReadYourReview({ booking }) {
           <div>
             <div css={titleLayout}>
               <div>Your Rating and Review</div>
-              <div onClick={handleClose} css={css`
-                cursor: pointer;
-              `}>X</div>
+              <div
+                onClick={handleClose}
+                css={css`
+                  cursor: pointer;
+                `}
+              >
+                X
+              </div>
             </div>
             <hr css={line} />
             {myReview &&

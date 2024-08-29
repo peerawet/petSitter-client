@@ -22,7 +22,10 @@ function MyPetsToolsProvider(props) {
 
   const handleSubmit = async () => {
     try {
-      await axios.post(`http://localhost:4000/pets/`, inputData);
+      await axios.post(
+        `https://petsitter-server2.onrender.com/pets/`,
+        inputData
+      );
       navigate(`/owner/${state.user.id}/yourPet/`);
     } catch (error) {
       console.log(error);
@@ -54,7 +57,9 @@ function MyPetsToolsProvider(props) {
 
   const getPet = async () => {
     try {
-      const result = await axios.get(`http://localhost:4000/pets/myPets`);
+      const result = await axios.get(
+        `https://petsitter-server2.onrender.com/pets/myPets`
+      );
       setAllPet(result.data.data);
       console.log(result);
     } catch (error) {
@@ -64,14 +69,16 @@ function MyPetsToolsProvider(props) {
 
   const getPetById = async (petId) => {
     const results = await axios.get(
-      `http://localhost:4000/pets/getpet/${petId}`
+      `https://petsitter-server2.onrender.com/pets/getpet/${petId}`
     );
     setPostById(results.data.data);
   };
 
   const deletePetById = async (petId) => {
     try {
-      await axios.delete(`http://localhost:4000/pets/${petId}`);
+      await axios.delete(
+        `https://petsitter-server2.onrender.com/pets/${petId}`
+      );
       navigate(`/owner/${state.user.id}/yourPet`);
       window.location.reload();
     } catch (error) {

@@ -59,7 +59,7 @@ function EditProfileTab() {
   };
 
   const handleSubmit = async () => {
-    await axios.put(`http://localhost:4000/owners/myProfile`, {
+    await axios.put(`https://petsitter-server2.onrender.com/owners/myProfile`, {
       full_name: nameData,
       phone: phoneData,
       email: emailData,
@@ -69,7 +69,9 @@ function EditProfileTab() {
   };
 
   const getDataProfile = async () => {
-    const result = await axios.get(`http://localhost:4000/owners/myProfile`);
+    const result = await axios.get(
+      `https://petsitter-server2.onrender.com/owners/myProfile`
+    );
     setprofileData(result.data.data.data);
   };
 

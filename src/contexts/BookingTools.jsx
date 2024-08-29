@@ -12,7 +12,7 @@ function BookingToolsProvider(props) {
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
       const results = await axios.get(
-        `http://localhost:4000/pets/myPets/` //its attached token in request, token will verify by middleware if vilid token, will extract token and add userId to req.
+        `https://petsitter-server2.onrender.com/pets/myPets/` //its attached token in request, token will verify by middleware if vilid token, will extract token and add userId to req.
       );
       setPetsResults({
         data: results.data.data,
@@ -27,7 +27,7 @@ function BookingToolsProvider(props) {
   const getSitterData = async (sitter_id) => {
     try {
       const result = await axios.get(
-        `http://localhost:4000/sitters/${sitter_id}`
+        `https://petsitter-server2.onrender.com/sitters/${sitter_id}`
       );
       setSitterData(result.data);
     } catch (error) {
@@ -37,7 +37,9 @@ function BookingToolsProvider(props) {
 
   const getOwnerData = async () => {
     try {
-      const result = await axios.get(`http://localhost:4000/owners/myProfile`);
+      const result = await axios.get(
+        `https://petsitter-server2.onrender.com/owners/myProfile`
+      );
       setOwnerData(result.data.data.data);
     } catch (error) {
       console.error("Error while fetching available pet types:", error);
@@ -47,7 +49,7 @@ function BookingToolsProvider(props) {
   const getBookingData = async (sitter_id) => {
     try {
       const response2 = await axios.get(
-        `http://localhost:4000/bookings/sitter/${sitter_id}`,
+        `https://petsitter-server2.onrender.com/bookings/sitter/${sitter_id}`,
         {
           params: {
             booked_start: selectedTimeStart, // ส่งวันที่ที่เลือกไปเพื่อดึงการนัดหมายในวันนั้น
@@ -67,7 +69,7 @@ function BookingToolsProvider(props) {
   const getBookingDetailData = async (sitter_id) => {
     try {
       const response2 = await axios.get(
-        `http://localhost:4000/bookings/detail/${sitter_id}`,
+        `https://petsitter-server2.onrender.com/bookings/detail/${sitter_id}`,
         {
           params: {
             booked_start: selectedTimeStart, // ส่งวันที่ที่เลือกไปเพื่อดึงการนัดหมายในวันนั้น
@@ -87,7 +89,7 @@ function BookingToolsProvider(props) {
   const getBookingResult = async (booking_id) => {
     try {
       const results = await axios.get(
-        `http://localhost:4000/bookings/myBookingResult/${booking_id}`
+        `https://petsitter-server2.onrender.com/bookings/myBookingResult/${booking_id}`
       );
       setBookingResult(results.data);
       // console.log(results.data);

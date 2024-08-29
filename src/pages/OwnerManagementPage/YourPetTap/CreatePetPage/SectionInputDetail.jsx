@@ -79,10 +79,13 @@ function SectionInputDetail() {
         console.log("Missing required fields");
         return;
       }
-      await axios.post(`http://localhost:4000/pets/${params.id}`, {
-        ...inputData,
-        picture: imageSrc,
-      });
+      await axios.post(
+        `https://petsitter-server2.onrender.com/pets/${params.id}`,
+        {
+          ...inputData,
+          picture: imageSrc,
+        }
+      );
 
       // navigate(`/owner/${state.user.id}/yourPet/`);
     } catch (error) {

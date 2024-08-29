@@ -21,7 +21,7 @@ function AlternativeLoginProvider(props) {
   const facebookLogin = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/facebook/facebookLogin"
+        "https://petsitter-server2.onrender.com/facebook/facebookLogin"
       );
       console.log(response);
       const url = response.data.data.url;
@@ -35,7 +35,7 @@ function AlternativeLoginProvider(props) {
   const googleLogin = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/google/googleLogin"
+        "https://petsitter-server2.onrender.com/google/googleLogin"
       );
       console.log(response);
       const url = response.data.data.url;
@@ -49,7 +49,7 @@ function AlternativeLoginProvider(props) {
   const alternativeLoginToken = async (accessToken) => {
     try {
       const response = await axios.post(
-        `http://localhost:4000/authentication/alternativeLogin/accessToken/${accessToken}`
+        `https://petsitter-server2.onrender.com/authentication/alternativeLogin/accessToken/${accessToken}`
       );
 
       const { existUser, newUser } = response.data;
@@ -85,7 +85,7 @@ function AlternativeLoginProvider(props) {
 
   const updateUser = async (data) => {
     const response = await axios.put(
-      "http://localhost:4000/authentication/alternativeLogin/updateUser",
+      "https://petsitter-server2.onrender.com/authentication/alternativeLogin/updateUser",
       data
     );
     const token = response.data.token;

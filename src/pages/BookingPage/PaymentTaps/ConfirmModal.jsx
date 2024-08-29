@@ -37,7 +37,7 @@ function ConfirmModal({ show, setShow }) {
         const start = new Date(Number(params.start));
         const end = new Date(Number(params.end));
         const response = await axios.post(
-          `http://localhost:4000/bookings/myBooking/${params.id}`,
+          `https://petsitter-server2.onrender.com/bookings/myBooking/${params.id}`,
           {
             start: start,
             end: end,
@@ -54,7 +54,7 @@ function ConfirmModal({ show, setShow }) {
         navigate(`/booking/result/${response.data.bookingId}/${params.id}`);
         if (isUpdateCalendar === true) {
           axios.post(
-            `http://localhost:4000/google/schedule_event/${params.id}`,
+            `https://petsitter-server2.onrender.com/google/schedule_event/${params.id}`,
             {
               start: start,
               end: end,
@@ -71,7 +71,7 @@ function ConfirmModal({ show, setShow }) {
           const start = new Date(Number(params.start));
           const end = new Date(Number(params.end));
           const response = await axios.post(
-            `http://localhost:4000/bookings/myBooking/${params.id}`,
+            `https://petsitter-server2.onrender.com/bookings/myBooking/${params.id}`,
             {
               start: start,
               end: end,
@@ -89,7 +89,7 @@ function ConfirmModal({ show, setShow }) {
           navigate(`/booking/result/${response.data.bookingId}/${params.id}`);
           if (isUpdateCalendar === true) {
             axios.post(
-              `http://localhost:4000/google/schedule_event/${params.id}`,
+              `https://petsitter-server2.onrender.com/google/schedule_event/${params.id}`,
               {
                 start: start,
                 end: end,

@@ -26,7 +26,9 @@ function Navbar() {
 
   const getOwnerData = async () => {
     try {
-      const result = await axios.get(`http://localhost:4000/owners/myProfile`);
+      const result = await axios.get(
+        `https://petsitter-server2.onrender.com/owners/myProfile`
+      );
       // console.log(result);
       setOwnerData(result.data.data.data);
     } catch (error) {
@@ -37,7 +39,7 @@ function Navbar() {
   const getSitterData = async () => {
     try {
       const result = await axios.get(
-        `http://localhost:4000/sitters/sitterProflie`
+        `https://petsitter-server2.onrender.com/sitters/sitterProflie`
       );
       // console.log(result.data);
       console.log(result);

@@ -66,7 +66,7 @@ function PayoutOption() {
   const getPayoutData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/sitters/booking/payoutOption`
+        `https://petsitter-server2.onrender.com/sitters/booking/payoutOption`
       );
 
       setPayoutData(response.data.successBookings);

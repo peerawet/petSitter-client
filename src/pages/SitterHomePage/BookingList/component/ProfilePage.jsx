@@ -121,14 +121,14 @@ function ProfilePage({ setIsProfilePage }) {
 
   const getPetById = async (petId) => {
     const results = await axios.get(
-      `http://localhost:4000/pets/getpet/${petId}`
+      `https://petsitter-server2.onrender.com/pets/getpet/${petId}`
     );
     setPetDetail(results.data.data);
   };
 
   const getOwnerAndPetById = async () => {
     const result = await axios.get(
-      `http://localhost:4000/bookings/${params.bookingId}`
+      `https://petsitter-server2.onrender.com/bookings/${params.bookingId}`
     );
 
     setBookingByid(result.data);
@@ -137,7 +137,7 @@ function ProfilePage({ setIsProfilePage }) {
 
   const updateStatus = async (statusChange) => {
     const result = await axios.put(
-      `http://localhost:4000/bookings/${params.bookingId}`,
+      `https://petsitter-server2.onrender.com/bookings/${params.bookingId}`,
       { status: statusChange }
     );
     getOwnerAndPetById(params.id);

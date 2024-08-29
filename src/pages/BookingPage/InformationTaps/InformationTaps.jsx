@@ -182,7 +182,7 @@ function InformationTaps() {
               setActiveSteps("payment");
               if (isUpdateCalendar === true) {
                 // Construct the URL for Google OAuth2 consent screen
-                const authUrl = "http://localhost:4000/google";
+                const authUrl = "https://petsitter-server2.onrender.com/google";
 
                 // Open the consent screen in a new tab
                 window.open(authUrl, "_blank");

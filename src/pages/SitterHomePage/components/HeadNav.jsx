@@ -49,7 +49,7 @@ const TopBar = () => {
   const getImg = async () => {
     try {
       const result = await axios.get(
-        `http://localhost:4000/sitters/sitterProflie`
+        `https://petsitter-server2.onrender.com/sitters/sitterProflie`
       );
 
       setImg(result.data);

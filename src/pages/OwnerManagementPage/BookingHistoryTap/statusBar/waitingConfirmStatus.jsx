@@ -9,7 +9,7 @@ import axios from "axios";
 
 function WaitingConfirmStatus({ booking }) {
   // const handleDeleteBooking = async () => {
-  //   await axios.delete(`http://localhost:4000/bookings/${booking.id}`);
+  //   await axios.delete(`https://petsitter-server2.onrender.com/bookings/${booking.id}`);
   // };
   return (
     <>

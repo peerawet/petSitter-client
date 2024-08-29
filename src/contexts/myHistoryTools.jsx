@@ -10,7 +10,9 @@ function MyHistoryToolsProvider(props) {
 
   const getHistory = async () => {
     try {
-      const result = await axios(`http://localhost:4000/bookings/mybookings`);
+      const result = await axios(
+        `https://petsitter-server2.onrender.com/bookings/mybookings`
+      );
       const sortedData = result.data.sort(
         (a, b) =>
           new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
@@ -24,11 +26,14 @@ function MyHistoryToolsProvider(props) {
 
   const postReview = async (sitterId, content, rating, booking_id) => {
     try {
-      await axios.post(`http://localhost:4000/comments/myPost/${sitterId}`, {
-        content: content,
-        rating: rating,
-        booking_id: booking_id,
-      });
+      await axios.post(
+        `https://petsitter-server2.onrender.com/comments/myPost/${sitterId}`,
+        {
+          content: content,
+          rating: rating,
+          booking_id: booking_id,
+        }
+      );
     } catch (error) {
       console.log(error);
     }

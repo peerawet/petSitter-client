@@ -52,7 +52,7 @@ const Body = ({ setIsProfilePage }) => {
   const fetchBookingHistory = async () => {
     try {
       const result = await axios.get(
-        `http://localhost:4000/bookings/sitterHomepage`
+        `https://petsitter-server2.onrender.com/bookings/sitterHomepage`
       );
       console.log(result);
       setFetchData(result.data);

@@ -34,7 +34,7 @@ function Popup() {
     useMyHistoryTools();
   const handleCancleBooking = async () => {
     await axios.put(
-      `http://localhost:4000/bookings/cancel/${selectedBooking.id}`
+      `https://petsitter-server2.onrender.com/bookings/cancel/${selectedBooking.id}`
     );
     setOpen(false);
     getHistory();

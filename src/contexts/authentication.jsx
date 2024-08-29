@@ -30,7 +30,10 @@ function AuthProvider(props) {
         signUp: { ...prevState.signUp, isLoading: true }, // Update isLoading inside signUp
       }));
 
-      await axios.post("http://localhost:4000/authentication/register", data);
+      await axios.post(
+        "https://petsitter-server2.onrender.com/authentication/register",
+        data
+      );
 
       setState((prevState) => ({
         ...prevState,
@@ -54,7 +57,7 @@ function AuthProvider(props) {
       }));
 
       const response = await axios.post(
-        "http://localhost:4000/authentication/login",
+        "https://petsitter-server2.onrender.com/authentication/login",
         data
       );
 
@@ -119,9 +122,12 @@ function AuthProvider(props) {
         },
       }));
       await new Promise((resolve) => setTimeout(resolve, 2000));
-      await axios.put("http://localhost:4000/authentication/forgotPassword", {
-        email,
-      });
+      await axios.put(
+        "https://petsitter-server2.onrender.com/authentication/forgotPassword",
+        {
+          email,
+        }
+      );
 
       setState((prevState) => ({
         ...prevState,
@@ -146,7 +152,7 @@ function AuthProvider(props) {
   const checkOTP = async (forgetEmail, OTP) => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/authentication/forgotPasswordOTP",
+        "https://petsitter-server2.onrender.com/authentication/forgotPasswordOTP",
         {
           email: forgetEmail,
           token: OTP,
@@ -161,7 +167,7 @@ function AuthProvider(props) {
   const updatePassword = async (email, password) => {
     try {
       const response = await axios.put(
-        `http://localhost:4000/authentication/updatePassword`,
+        `https://petsitter-server2.onrender.com/authentication/updatePassword`,
         {
           email,
           password,

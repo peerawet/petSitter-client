@@ -60,10 +60,13 @@ function SectionInputUpdatePage() {
 
   const handleSubmit = async (event) => {
     try {
-      await axios.put(`http://localhost:4000/pets/${params.petId}`, {
-        ...inputData,
-        picture: postById.picture,
-      });
+      await axios.put(
+        `https://petsitter-server2.onrender.com/pets/${params.petId}`,
+        {
+          ...inputData,
+          picture: postById.picture,
+        }
+      );
     } catch (error) {
       console.error("Error updating pet:", error.message);
     }

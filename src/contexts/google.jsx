@@ -20,7 +20,7 @@ function GoogleProvider(props) {
   const googleLogin = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/google/googleLogin"
+        "https://petsitter-server2.onrender.com/google/googleLogin"
       );
       console.log(response);
       const url = response.data.data.url;

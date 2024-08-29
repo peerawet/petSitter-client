@@ -31,7 +31,7 @@ function SittersProvider(props) {
       setSearchResult({ ...searchResult, isLoading: true });
 
       const response = await axios.get(
-        `http://localhost:4000/sitters?full_name=${searchInput.searchInput}&experience=${searchInput.experience}&rating=${searchInput.rating}&dog=${searchInput.dog}&cat=${searchInput.cat}&bird=${searchInput.bird}&rabbit=${searchInput.rabbit}`
+        `https://petsitter-server2.onrender.com/sitters?full_name=${searchInput.searchInput}&experience=${searchInput.experience}&rating=${searchInput.rating}&dog=${searchInput.dog}&cat=${searchInput.cat}&bird=${searchInput.bird}&rabbit=${searchInput.rabbit}`
       );
       // After the delay, update the search result
       setSearchResult({
@@ -81,7 +81,9 @@ function SittersProvider(props) {
 
   const getSitterData = async () => {
     try {
-      const result = await axios(`http://localhost:4000/sitters/sitterProflie`);
+      const result = await axios(
+        `https://petsitter-server2.onrender.com/sitters/sitterProflie`
+      );
       // console.log(result);
       setGetSitterInfo(result.data);
 
@@ -117,29 +119,32 @@ function SittersProvider(props) {
   const handleSubmitSitter = async () => {
     const updateImage = updateImg;
 
-    await axios.put(`http://localhost:4000/sitters/myProfile`, {
-      full_name: name,
-      profile_img: updateImage || getSitterInfo.profile_img,
-      experience,
-      phone,
-      introduction,
-      trade_name: tradeName,
-      dog: petType.dog,
-      cat: petType.cat,
-      bird: petType.bird,
-      rabbit: petType.rabbit,
-      service,
-      my_place: myPlace,
-      address_detail: address,
-      sub_district: subDistrict,
-      district,
-      province,
-      post_code: postCode,
-      image_gallery: imgGallery || getSitterInfo.image_gallery,
-      latitude: pin.lat,
-      longitude: pin.lng,
-      is_active: isActive,
-    });
+    await axios.put(
+      `https://petsitter-server2.onrender.com/sitters/myProfile`,
+      {
+        full_name: name,
+        profile_img: updateImage || getSitterInfo.profile_img,
+        experience,
+        phone,
+        introduction,
+        trade_name: tradeName,
+        dog: petType.dog,
+        cat: petType.cat,
+        bird: petType.bird,
+        rabbit: petType.rabbit,
+        service,
+        my_place: myPlace,
+        address_detail: address,
+        sub_district: subDistrict,
+        district,
+        province,
+        post_code: postCode,
+        image_gallery: imgGallery || getSitterInfo.image_gallery,
+        latitude: pin.lat,
+        longitude: pin.lng,
+        is_active: isActive,
+      }
+    );
 
     await getSitterData();
   };
