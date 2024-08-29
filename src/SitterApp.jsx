@@ -5,7 +5,7 @@ import RegisterPage from "./pages/RegisterPage/Registerpage";
 import SearchListPage from "./pages/SearchListPage/SearchListPage";
 import OwnerHomePage from "./pages/OwnerHomePage/OwnerHomePage";
 import SitterDetailsPage from "./pages/SitterDetailsPage/SitterDetailsPage";
-import ForgetPasswordPage from "./pages/ForgetPasswordPage/ForgetPasswordPage.Jsx";
+import ForgetPasswordPage from "./pages/ForgetPasswordPage/ForgetPasswordPage.jsx";
 import SitterHomepage from "./pages/SitterHomePage/SitterHomepage";
 
 function SitterApp() {

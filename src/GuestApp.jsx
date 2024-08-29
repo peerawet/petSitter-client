@@ -7,7 +7,7 @@ import OwnerHomePage from "./pages/OwnerHomePage/OwnerHomePage";
 import SitterDetailsPage from "./pages/SitterDetailsPage/SitterDetailsPage";
 import OwnerMangementPage from "./pages/OwnerManagementPage/OwnerMangementPage";
 import BookingPage from "./pages/BookingPage/BookingPage";
-import ForgetPasswordPage from "./pages/ForgetPasswordPage/ForgetPasswordPage.Jsx";
+import ForgetPasswordPage from "./pages/ForgetPasswordPage/ForgetPasswordPage.jsx";
 import BookingResultPage from "./pages/BookingPage/BookingResult/BookingResultPage.jsx";
 
 function GuestApp() {
